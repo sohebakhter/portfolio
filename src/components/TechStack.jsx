@@ -1,26 +1,26 @@
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
 export default function TechStack() {
   const frontend = [
-    { name: 'HTML5', icon: 'html' },
-    { name: 'CSS3', icon: 'css' },
-    { name: 'JavaScript', icon: 'javascript' },
-    { name: 'React', icon: 'flutter' }
-  ]
+    { name: "HTML5", icon: "html" },
+    { name: "CSS3", icon: "css" },
+    { name: "JavaScript", icon: "javascript" },
+    { name: "React", icon: "flutter" },
+  ];
 
   const backend = [
-    { name: 'Node.js', icon: 'data_object' },
-    { name: 'Express', icon: 'storage' },
-    { name: 'MongoDB', icon: 'database' },
-    { name: 'REST APIs', icon: 'hub' }
-  ]
+    { name: "Node.js", icon: "data_object" },
+    { name: "Express", icon: "storage" },
+    { name: "MongoDB", icon: "database" },
+    { name: "REST APIs", icon: "hub" },
+  ];
 
   const tools = [
-    { name: 'Git', icon: 'code_blocks' },
-    { name: 'VS Code', icon: 'terminal' },
-    { name: 'Figma', icon: 'design_services' },
-    { name: 'Vercel', icon: 'cloud' }
-  ]
+    { name: "Git", icon: "code_blocks" },
+    { name: "VS Code", icon: "terminal" },
+    { name: "Figma", icon: "design_services" },
+    { name: "Vercel", icon: "cloud" },
+  ];
 
   const TechCard = ({ name, icon, index }) => (
     <motion.div
@@ -36,21 +36,25 @@ export default function TechStack() {
         transition={{ duration: 0.6 }}
         className="bg-[#0D9488] text-white p-3 sm:p-4 rounded-lg"
       >
-        <span className="material-symbols-outlined text-3xl sm:!text-4xl">{icon}</span>
+        <span className="material-symbols-outlined text-3xl sm:!text-4xl">
+          {icon}
+        </span>
       </motion.div>
-      <p className="mt-3 sm:mt-4 font-semibold text-sm sm:text-base text-[#0D9488] text-center">{name}</p>
+      <p className="mt-3 sm:mt-4 font-semibold text-sm sm:text-base text-[#0D9488] text-center">
+        {name}
+      </p>
     </motion.div>
-  )
+  );
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
-      }
-    }
-  }
+        staggerChildren: 0.1,
+      },
+    },
+  };
 
   return (
     <div id="tech-stack" className="bg-[#F0F9FF] dark:bg-[#0C1421]">
@@ -85,7 +89,8 @@ export default function TechStack() {
               viewport={{ once: true }}
               className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4"
             >
-              A collection of technologies I use to build robust and beautiful web applications.
+              A collection of technologies I use to build robust and beautiful
+              web applications.
             </motion.p>
           </motion.div>
           <div className="mt-8 sm:mt-10 md:mt-12 space-y-8 sm:space-y-10 md:space-y-12">
@@ -105,7 +110,9 @@ export default function TechStack() {
                 Frontend
               </motion.h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
-                {frontend.map((tech, index) => <TechCard key={tech.name} {...tech} index={index} />)}
+                {frontend.map((tech, index) => (
+                  <TechCard key={tech.name} {...tech} index={index} />
+                ))}
               </div>
             </motion.div>
             <motion.div
@@ -124,7 +131,9 @@ export default function TechStack() {
                 Backend
               </motion.h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
-                {backend.map((tech, index) => <TechCard key={tech.name} {...tech} index={index} />)}
+                {backend.map((tech, index) => (
+                  <TechCard key={tech.name} {...tech} index={index} />
+                ))}
               </div>
             </motion.div>
             <motion.div
@@ -143,12 +152,14 @@ export default function TechStack() {
                 Tools & Platforms
               </motion.h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
-                {tools.map((tech, index) => <TechCard key={tech.name} {...tech} index={index} />)}
+                {tools.map((tech, index) => (
+                  <TechCard key={tech.name} {...tech} index={index} />
+                ))}
               </div>
             </motion.div>
           </div>
         </motion.div>
       </div>
     </div>
-  )
+  );
 }

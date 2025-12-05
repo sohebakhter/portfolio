@@ -1,10 +1,12 @@
-import { motion } from 'framer-motion'
-import { useEffect, useRef } from 'react'
-import { gsap } from 'gsap'
+import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import portImg from "../assets/portimage.jpg";
+import { Link } from "react-router";
 
 export default function Hero() {
-  const imageRef = useRef(null)
-  const circleRef = useRef(null)
+  const imageRef = useRef(null);
+  const circleRef = useRef(null);
 
   useEffect(() => {
     // GSAP animations for image float effect
@@ -13,20 +15,23 @@ export default function Hero() {
       duration: 2,
       repeat: -1,
       yoyo: true,
-      ease: 'power1.inOut'
-    })
+      ease: "power1.inOut",
+    });
 
     // Rotate circle decoration
     gsap.to(circleRef.current, {
       rotation: 360,
       duration: 20,
       repeat: -1,
-      ease: 'none'
-    })
-  }, [])
+      ease: "none",
+    });
+  }, []);
 
   return (
-    <div id="home" className="min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:p-8">
+    <div
+      id="home"
+      className="min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:p-8"
+    >
       <motion.main
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -50,7 +55,7 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="font-['Playfair_Display'] text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-800 dark:text-white leading-tight"
               >
-                Hello, I'm Steve Milner
+                Hello, I'm Soheb Akhter Badhan
               </motion.h1>
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
@@ -66,7 +71,9 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.8 }}
                 className="mt-6 text-slate-600 dark:text-slate-400 text-base max-w-md mx-auto lg:mx-0"
               >
-                I am a Full-Stack Web Developer with extensive experience of over 4 years. My expertise is in creating & designing websites, Mobile Apps, and Desktop Applications.
+                I am a Full-Stack Web Developer with extensive experience of
+                over 4 years. My expertise is in creating & designing websites,
+                Mobile Apps, and Desktop Applications.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -74,13 +81,15 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 1 }}
                 className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
               >
-                <motion.button
+                <Link
+                  target="_blank"
+                  to="https://drive.google.com/file/d/1USZ8LdcXvxghPIPb5X6MG4OA5Z8gHogY/view?usp=sharing"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-full sm:w-auto px-8 py-3 font-semibold text-sm border border-[#0D9488] text-[#0D9488] rounded-md hover:bg-[#0D9488] hover:text-white transition-all duration-300"
                 >
-                  LEARN MORE
-                </motion.button>
+                  RESUME
+                </Link>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -96,17 +105,19 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="relative h-96 lg:h-full flex items-end"
             >
-              <div ref={circleRef} className="absolute -left-32 -bottom-20 w-96 h-96 lg:w-[480px] lg:h-[480px] border-[16px] border-teal-100/50 dark:border-teal-900/50 rounded-full" />
+              <div
+                ref={circleRef}
+                className="absolute -left-32 -bottom-20 w-96 h-96 lg:w-[480px] lg:h-[480px] border-[16px] border-teal-100/50 dark:border-teal-900/50 rounded-full"
+              />
               <img
-                ref={imageRef}
-                alt="Portrait of Steve Milner, a web developer."
-                className="w-full max-w-md mx-auto lg:max-w-none h-auto object-contain object-bottom relative z-10 mt-8 lg:mt-0"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKLoe5WrSbJnvrq_GjaOgQC3epGz1QBdqc6EQx26zb2_ARvwTuhu2ixATJiWY5pQZ1UBzsb2lt0_UdWmB1VIIYZYhDchZ_sD-uqI6qVOTvwKdXsvrePYKJzwThpK58bOFqce1Wix3NeWw4nutSRWS6277wXPydvL_cNfC_u4ItG15C1937FVNCVIVYkOsvEKH-BY13EMOrF15mIl-JsmsDdcwUSHSR_ivRn2Hwhw2D2aPbmzwOg1lIz2sMDEZyjS8jozk1K7BNygo"
+                alt="Portrait of Soheb Akhter, a web developer."
+                className="w-full max-w-md mx-auto lg:max-w-none h-auto object-contain object-bottom relative z-10 mt-8 lg:mt-0 rounded-2xl"
+                src={portImg}
               />
             </motion.div>
           </div>
         </div>
       </motion.main>
     </div>
-  )
+  );
 }
