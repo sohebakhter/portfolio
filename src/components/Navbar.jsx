@@ -53,7 +53,7 @@ export default function Navbar() {
             "Services",
             "Experience",
             "Skill",
-            "Portfolio",
+            "Projects",
           ].map((item, index) => {
             const sectionMap = {
               Home: "home",
@@ -61,7 +61,7 @@ export default function Navbar() {
               Services: "tech-stack",
               Experience: "about",
               Skill: "tech-stack",
-              Portfolio: "portfolio",
+              Projects: "projects",
             };
             return (
               <motion.a

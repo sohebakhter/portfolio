@@ -4,6 +4,12 @@ import { Link } from "react-router";
 export default function Portfolio() {
   const projects = [
     {
+      name: "Blood Donation Platform",
+      type: "Website",
+      image: "https://i.ibb.co.com/jZZPJPRD/image.png",
+      link: "https://github.com/sohebakhter/blood-donation-client.git",
+    },
+    {
       name: "PlateShare",
       type: "Website",
       image: "https://i.ibb.co.com/tT7b2SnZ/image.png",
