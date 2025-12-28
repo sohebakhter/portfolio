@@ -1,44 +1,54 @@
 import { motion } from "framer-motion";
+import {
+  FaHtml5,
+  FaCss3,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaGit,
+  FaFigma,
+} from "react-icons/fa";
+import { SiExpress, SiMongodb, SiVercel } from "react-icons/si";
+import { FiServer } from "react-icons/fi";
+import { VscCode } from "react-icons/vsc";
 
 export default function TechStack() {
   const frontend = [
-    { name: "HTML5", icon: "html" },
-    { name: "CSS3", icon: "css" },
-    { name: "JavaScript", icon: "javascript" },
-    { name: "React", icon: "flutter" },
+    { name: "HTML5", Icon: FaHtml5 },
+    { name: "CSS3", Icon: FaCss3 },
+    { name: "JavaScript", Icon: FaJs },
+    { name: "React", Icon: FaReact },
   ];
 
   const backend = [
-    { name: "Node.js", icon: "data_object" },
-    { name: "Express", icon: "storage" },
-    { name: "MongoDB", icon: "database" },
-    { name: "REST APIs", icon: "hub" },
+    { name: "Node.js", Icon: FaNodeJs },
+    { name: "Express", Icon: SiExpress },
+    { name: "MongoDB", Icon: SiMongodb },
+    { name: "REST APIs", Icon: FiServer },
   ];
 
   const tools = [
-    { name: "Git", icon: "code_blocks" },
-    { name: "VS Code", icon: "terminal" },
-    { name: "Figma", icon: "design_services" },
-    { name: "Vercel", icon: "cloud" },
+    { name: "Git", Icon: FaGit },
+    { name: "VS Code", Icon: VscCode },
+    { name: "Figma", Icon: FaFigma },
+    { name: "Vercel", Icon: SiVercel },
   ];
 
-  const TechCard = ({ name, icon, index }) => (
+  const TechCard = ({ name, Icon, index }) => (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ scale: 1.1, rotate: 5 }}
       viewport={{ once: true }}
-      className="flex flex-col items-center p-4 sm:p-6 bg-[#F0F9FF] dark:bg-[#0C1421] rounded-lg cursor-pointer"
+      className="flex flex-col items-center p-4 sm:p-6 bg-white dark:bg-slate-900/70 rounded-lg cursor-pointer shadow-md hover:shadow-lg transition-shadow duration-300"
     >
       <motion.div
         whileHover={{ rotate: 360 }}
         transition={{ duration: 0.6 }}
         className="bg-[#0D9488] text-white p-3 sm:p-4 rounded-lg"
       >
-        <span className="material-symbols-outlined text-3xl sm:!text-4xl">
-          {icon}
-        </span>
+        <Icon className="text-3xl sm:!text-4xl" />
       </motion.div>
       <p className="mt-3 sm:mt-4 font-semibold text-sm sm:text-base text-[#0D9488] text-center">
         {name}
@@ -57,21 +67,21 @@ export default function TechStack() {
   };
 
   return (
-    <div id="tech-stack" className="bg-[#F0F9FF] dark:bg-[#0C1421]">
-      <div className="min-h-screen flex items-center justify-center py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+    <div id="tech-stack" className="bg-[#F0F9FF] dark:bg-[#0C1421] py-20">
+      <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="w-full max-w-7xl mx-auto bg-white dark:bg-slate-900/70 p-8 sm:p-12 lg:p-16 rounded-lg sm:rounded-xl shadow-lg"
+          className="w-full max-w-7xl mx-auto"
         >
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center"
+            className="text-center mb-16"
           >
             <motion.h2
               initial={{ scale: 0.5 }}
@@ -93,7 +103,7 @@ export default function TechStack() {
               web applications.
             </motion.p>
           </motion.div>
-          <div className="mt-8 sm:mt-10 md:mt-12 space-y-8 sm:space-y-10 md:space-y-12">
+          <div className="space-y-12 sm:space-y-16">
             <motion.div
               variants={containerVariants}
               initial="hidden"
@@ -105,11 +115,11 @@ export default function TechStack() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="font-['Playfair_Display'] text-xl sm:text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4 sm:mb-6 text-center sm:text-left"
+                className="font-['Playfair_Display'] text-xl sm:text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6 sm:mb-8 text-center sm:text-left"
               >
                 Frontend
               </motion.h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
                 {frontend.map((tech, index) => (
                   <TechCard key={tech.name} {...tech} index={index} />
                 ))}
@@ -126,11 +136,11 @@ export default function TechStack() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="font-['Playfair_Display'] text-xl sm:text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4 sm:mb-6 text-center sm:text-left"
+                className="font-['Playfair_Display'] text-xl sm:text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6 sm:mb-8 text-center sm:text-left"
               >
                 Backend
               </motion.h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
                 {backend.map((tech, index) => (
                   <TechCard key={tech.name} {...tech} index={index} />
                 ))}
@@ -147,11 +157,11 @@ export default function TechStack() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="font-['Playfair_Display'] text-xl sm:text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4 sm:mb-6 text-center sm:text-left"
+                className="font-['Playfair_Display'] text-xl sm:text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6 sm:mb-8 text-center sm:text-left"
               >
                 Tools & Platforms
               </motion.h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
                 {tools.map((tech, index) => (
                   <TechCard key={tech.name} {...tech} index={index} />
                 ))}

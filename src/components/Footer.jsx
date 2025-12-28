@@ -1,4 +1,12 @@
 import { Link } from "react-router";
+import {
+  FaPhone,
+  FaEnvelope,
+  FaMapMarker,
+  FaLinkedin,
+  FaGithub,
+  FaArrowRight,
+} from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -20,16 +28,16 @@ export default function Footer() {
                 </h3>
                 <ul className="space-y-3 text-sm">
                   <li className="flex items-center gap-3">
-                    <span>📞</span>
+                    <FaPhone className="text-[#0D9488]" />
                     <span>+8801797101644</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span>✉️</span>
+                    <FaEnvelope className="text-[#0D9488]" />
                     <span>sohebakhterbadhan@gmail.com</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span>📍</span>
-                    <span>Dhaka Bangladesh</span>
+                    <FaMapMarker className="text-[#0D9488]" />
+                    <span>Dhaka, Bangladesh</span>
                   </li>
                 </ul>
               </div>
@@ -44,24 +52,24 @@ export default function Footer() {
                     type="email"
                   />
                   <button className="bg-[#0D9488] text-white p-2 rounded-md hover:bg-opacity-90 transition-colors">
-                    <span>➤</span>
+                    <FaArrowRight />
                   </button>
                 </div>
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-4">
                   <Link
                     target="_blank"
                     to="https://www.linkedin.com/in/soheb-akhter"
-                    className="text-[#0D9488] hover:text-opacity-80 transition-colors"
-                    href="#"
+                    className="flex items-center gap-2 text-[#0D9488] hover:text-opacity-80 transition-colors"
                   >
+                    <FaLinkedin />
                     LinkedIn
                   </Link>
                   <Link
                     target="_blank"
                     to="https://github.com/sohebakhter"
-                    className="text-[#0D9488] hover:text-opacity-80 transition-colors"
-                    href="#"
+                    className="flex items-center gap-2 text-[#0D9488] hover:text-opacity-80 transition-colors"
                   >
+                    <FaGithub />
                     GitHub
                   </Link>
                 </div>
@@ -71,7 +79,7 @@ export default function Footer() {
         </div>
         <div className="bg-[#0D9488] text-white text-center py-4">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-sm">© 2020 - 2022 All Right Reserved</p>
+            <p className="text-sm">© 2025 All Rights Reserved</p>
           </div>
         </div>
       </footer>

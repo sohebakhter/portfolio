@@ -30,7 +30,7 @@ export default function Portfolio() {
   ];
 
   return (
-    <div id="portfolio" className="bg-[#F0F9FF] dark:bg-[#0C1421]">
+    <div id="projects" className="bg-[#F0F9FF] dark:bg-[#0C1421]">
       <section className="min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import img2 from "../assets/port2.jpg";
+import { FaEnvelope, FaPhone, FaMapMarker } from "react-icons/fa";
 
 export default function Contact() {
   const imageRef = useRef(null);
@@ -36,7 +37,7 @@ export default function Contact() {
       id="contact"
       className="bg-[#F0F9FF] dark:bg-[#0C1421] font-['Playfair_Display'] antialiased"
     >
-      <main className="min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8">
+      <main className=" flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl w-full mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -122,6 +123,11 @@ export default function Contact() {
                         className="block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus:border-[#0D9488] focus:ring-[#0D9488]"
                         id={field}
                         type={field === "email" ? "email" : "text"}
+                        placeholder={
+                          field === "email"
+                            ? "your.email@example.com"
+                            : "Your Full Name"
+                        }
                       />
                     </motion.div>
                   ))}
@@ -142,6 +148,7 @@ export default function Contact() {
                       className="block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus:border-[#0D9488] focus:ring-[#0D9488]"
                       id="message"
                       rows="4"
+                      placeholder="Write your message here..."
                     />
                   </motion.div>
                   <motion.button
@@ -150,9 +157,34 @@ export default function Contact() {
                     className="w-full py-3 px-4 rounded-md text-sm font-medium text-white bg-[#0D9488] hover:bg-opacity-90 transition-colors"
                     type="submit"
                   >
-                    CONTACT US
+                    Send Message
                   </motion.button>
                 </motion.form>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                  viewport={{ once: true }}
+                  className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700"
+                >
+                  <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">
+                    Or reach out directly:
+                  </h3>
+                  <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                    <p className="flex items-center gap-2">
+                      <FaEnvelope className="text-[#0D9488]" />
+                      sohebakhterbadhan@gmail.com
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <FaPhone className="text-[#0D9488]" />
+                      +8801797101644
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <FaMapMarker className="text-[#0D9488]" />
+                      Dhaka, Bangladesh
+                    </p>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
             <motion.div

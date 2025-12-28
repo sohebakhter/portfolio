@@ -38,7 +38,7 @@ export default function About() {
       id="about"
       className="bg-[#F0F9FF] dark:bg-[#0C1421] font-['Playfair_Display'] text-slate-700 dark:text-slate-300 antialiased"
     >
-      <div className="relative w-full min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="relative w-full flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <motion.div
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
@@ -106,17 +106,7 @@ export default function About() {
               className="space-y-8"
             >
               <div>
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: "2rem" }}
-                  transition={{ duration: 0.8 }}
-                  className="flex items-center space-x-3"
-                >
-                  <span className="h-0.5 bg-[#0D9488]" />
-                  <span className="flex flex-row text-sm font-semibold tracking-wider uppercase text-[#0D9488]">
-                    About Me
-                  </span>
-                </motion.div>
+                <motion.p>About Me</motion.p>
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}

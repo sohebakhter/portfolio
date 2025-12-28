@@ -28,26 +28,23 @@ export default function Hero() {
   }, []);
 
   return (
-    <div
-      id="home"
-      className="min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:p-8"
-    >
+    <div id="home" className="bg-[#F0F9FF]  flex items-center justify-center ">
       <motion.main
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
-        className="w-full max-w-7xl mx-auto bg-white dark:bg-slate-900 rounded-2xl shadow-xl overflow-hidden"
+        className="w-full bg-white dark:bg-slate-900 shadow-xl overflow-hidden"
       >
         <div className="relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-teal-50/50 to-transparent dark:from-teal-900/20 dark:to-transparent" />
           <div className="absolute -top-20 -left-20 w-60 h-60 border-2 border-teal-200 dark:border-teal-800 rounded-full opacity-30" />
           <div className="absolute bottom-10 left-40 w-12 h-12 bg-teal-100 dark:bg-teal-900 rounded-full opacity-30" />
-          <div className="relative grid grid-cols-1 lg:grid-cols-2 items-center">
+          <div className="relative grid grid-cols-1 lg:grid-cols-2 items-center max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="px-6 sm:px-10 lg:px-12 py-16 lg:py-24 text-center lg:text-left z-10"
+              className=" text-center lg:text-left z-10"
             >
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
@@ -55,7 +52,9 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="font-['Playfair_Display'] text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-800 dark:text-white leading-tight"
               >
-                Hello, I'm Soheb Akhter Badhan
+                Hello, I'm
+                <br />
+                Soheb Akhter Badhan
               </motion.h1>
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
@@ -72,14 +71,14 @@ export default function Hero() {
                 className="mt-6 text-slate-600 dark:text-slate-400 text-base max-w-md mx-auto lg:mx-0"
               >
                 I am a Full-Stack Web Developer with extensive experience of
-                over 4 years. My expertise is in creating & designing websites,
+                over 2 years. My expertise is in creating & designing websites,
                 Mobile Apps, and Desktop Applications.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1 }}
-                className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+                className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 "
               >
                 <Link
                   target="_blank"
@@ -103,7 +102,7 @@ export default function Hero() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="relative h-96 lg:h-full flex items-end"
+              className="relative h-96 lg:h-full flex items-end p-5"
             >
               <div
                 ref={circleRef}
